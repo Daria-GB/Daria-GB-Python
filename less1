@@ -1,0 +1,73 @@
+# задание 1
+print("ЗАДАНИЕ 1")
+var_1 = input("Введите переменную 1:")
+print(var_1)
+var_2 = int(input("Введите переменную 2:"))
+print(var_2)
+print(f"Переменная_1 {var_1} строковая, а переменная_2 {var_2} переведена в числовой тип")
+print("А теперь с format Переменная_1 {} строковая, а переменная_2 {} переведена в числовой тип".format(var_1, var_2))
+
+# задание 2
+print("ЗАДАНИЕ 2")
+seconds_user = int(input("Введите время в секундах: "))
+hours = seconds_user // 3600
+minutes = (seconds_user % 3600) // 60
+seconds = (seconds_user % 3600) % 60
+print(f"{seconds_user} секунд равно: {hours} ч. {minutes} мин. {seconds} сек.")
+#print("Или так: {} секунд равно: {} : {} : {} ".format(seconds_user, hours, minutes, seconds))
+print(f"Или так: {seconds_user} секунд равно: {hours:02} : {minutes:02} : {seconds:02} ")
+
+# задание 3
+print("ЗАДАНИЕ 3")
+n = str(input("Введите число n: "))
+nn = n + n
+nnn = nn + n
+summ = int(nnn) + int(nn) + int(n)
+print(f"Сумма чисел {nnn}, {nn} и {n} равна {summ} ")
+
+# задание 4
+print("ЗАДАНИЕ 4")
+n_user = int(input("Введите целое положительное число n: "))
+max_num = 0
+n = n_user
+while n != 0:
+    dev_n = n % 10
+    if dev_n >= max_num:
+        max_num = dev_n
+    n = n // 10
+print(f"Наибольшая цифра в числе {n_user}: {max_num} ")
+
+# задание 5
+print("ЗАДАНИЕ 5")
+proceeds = float(input("Введите выручку (руб.) за отчетный период: "))
+costs = float(input("Введите издержки (руб.) за отчетный период: "))
+employee_numb = int(input("Введите количество сотрудников: "))
+profit = proceeds - costs
+if profit < 0:
+    print(f"Вы работаете в убыток! Сумма убытка за отчетный период: {profit} руб.")
+    print("Убыток в пересчете на 1 сотрудника составляет: {:.2f} руб. ".format(profit / employee_numb))
+else:
+    print("Прибыль за отчетный период: {:.2f} руб. ".format(profit))
+    print("Прибыль в пересчете на 1 сотрудника составляет: {:.2f} руб. ".format(profit / employee_numb))
+    print("Рентабельность за отчетный период:{:.2f} % ".format(profit / proceeds * 100))
+
+# задание 6
+print("ЗАДАНИЕ 6")
+begin_dist = float(input("Укажите дистанцию, с которой спортсмен начинаем тренировку (км.): "))
+result = float(input("Укажите дистанцию, которой необходимо достигнуть в результате тренировок (км.): "))
+if begin_dist >= result:
+    print(f"Стартовая дистанция больше  или равна цели тренировки. Спортсмен уже готов!!")
+day_num = 1
+dist=begin_dist
+while dist < result:
+    if day_num == 1:
+        print(f"День {day_num}: {dist} ")
+    else:
+        day_gain = dist * 0.1
+        dist = dist + day_gain
+        print("День {}: {:.2f} км".format(day_num,dist))
+    if dist >= result:
+        print(f"Начиная тренировки с {begin_dist} км, результата в {result} км спортсмен достигнет на {day_num} день тренировок")
+        break
+    day_num +=1
+
